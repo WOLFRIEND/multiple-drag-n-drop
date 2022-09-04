@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Demo:
+![](https://github.com/WOLFRIEND/multiple-drag-n-drop/blob/multiple-dnd-without-tests/demo.gif)
+
 ## Available Scripts
 
 ### `npm start` - Start the project.
