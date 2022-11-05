@@ -1,13 +1,10 @@
-import {Container} from "./components/Container/Container";
-import styles from './App.module.scss'
+import { Container } from "./components/Container/Container";
+import styles from "./App.module.scss";
 
-function App() {
-
+export const App = () => {
   return (
     <div className={styles.app}>
-<Container />
+      <Container />
     </div>
   );
-}
-
-export default App;
+};

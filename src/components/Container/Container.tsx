@@ -1,6 +1,6 @@
-import { DropBoxContainer } from "../DnD/DropBox/DropBoxContainer";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { DropBoxContainer } from "../DnD/DropBox/DropBoxContainer";
 import { Header } from "../Header/Header";
 import { Logo } from "../Logo/Logo";
 
@@ -24,6 +24,8 @@ const MOCK_DATA = {
     container: "Container3",
   },
 };
+
+// Omitted pieces of code.
 
 export const Container = () => {
   return (

@@ -18,21 +18,12 @@
         "tsBuildInfoFile": ".tsbuildinfo",
         "baseUrl": "./",
         "paths": {
-            "@utils": ["src/utils"],
-            "@utils/*": ["src/utils/*"],
-            "@server/*": ["server/*"],
-            "@i18n": ["src/i18n"],
-            "@dictionary": ["src/i18n/dictionary"],
-            "@graphql/*": ["src/graphql/*"],
             "@components/*": ["src/components/*"],
-            "@modules/*": ["src/modules/*"],
-            "@hooks": ["src/hooks"],
-            "@hooks/*": ["src/hooks/*"],
             "@app/*": ["src/*"],
             "@static/*": ["src/static/*"]
         },
         "plugins": [{ "name": "typescript-plugin-css-modules" }],
     },
-    "exclude": ["dist", ".next", "out", "next.config.js", "jest.setup.ts", "node_modules"],
+    "exclude": ["dist", "out", "jest.setup.ts", "node_modules"],
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

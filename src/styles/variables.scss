@@ -1,3 +1,10 @@
+@import "../../node_modules/rfs/scss";
+
+.wakafo {
+  @include font-size(4rem);
+  color: yellow;
+}
+
 $blizzardBlue: #ADD4EF;
 $astronaut: #295175;
 $nero: #200500;
