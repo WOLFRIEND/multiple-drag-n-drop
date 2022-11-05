@@ -1,25 +1,7 @@
-@import "../../node_modules/rfs/scss";
-
-.wakafo {
-  @include font-size(4rem);
-  color: yellow;
-}
-
 $blizzardBlue: #ADD4EF;
 $astronaut: #295175;
 $nero: #200500;
 $paarl: #9B5524;
-
-
-// Breakpoints
-$mobileBreakpointWidth: 320;
-$tabletBreakpointWidth: 768;
-$desktopBreakpointWidth: 1025;
-
-@media (max-width: #{$mobileBreakpointWidth - 1px}) {
-
-}
-
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
