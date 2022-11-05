@@ -3,29 +3,25 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { DropBoxContainer } from "../DnD/DropBox/DropBoxContainer";
 import { Header } from "../Header/Header";
 import { Logo } from "../Logo/Logo";
+import { SelectionItem } from "@components/DnD/DropBox/DropBox.types";
 
-const MOCK_DATA = {
-  Container1: {
-    id: 1,
+const MOCK_DATA: SelectionItem[] = [
+  {
+    id: "1",
     name: "Stir-Fried Cat",
     icon: "stir-fried-cat",
-    container: "Container1",
   },
-  Container2: {
-    id: 2,
+  {
+    id: "2",
     name: "Whisker Omelet",
     icon: "whisker-omelet",
-    container: "Container2",
   },
-  Container3: {
-    id: 3,
+  {
+    id: "3",
     name: "Cat tails",
     icon: "cat-tails",
-    container: "Container3",
   },
-};
-
-// Omitted pieces of code.
+];
 
 export const Container = () => {
   return (

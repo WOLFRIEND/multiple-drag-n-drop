@@ -1,28 +1,16 @@
-import {DragItem} from "@components/DnD/DragBox/DragBox.types";
+import { DragItem } from "@components/DnD/DragBox/DragBox.types";
 import { DragBox } from "@components/DnD/DragBox/DragBox.types";
 
-export enum ContainerNames {
-    Container1 = 'Container1',
-    Container2 = 'Container2',
-    Container3 = 'Container3',
-}
-
 export type SelectionItem = DragBox & {
-    container?: string
-}
+  index?: number;
+};
 
-export type Selections = {
-    [ContainerNames.Container1]: SelectionItem;
-    [ContainerNames.Container2]: SelectionItem;
-    [ContainerNames.Container3]: SelectionItem;
-}
-
-export type DropBoxcontainerProps = {
-    selections: Selections
-}
+export type DropBoxContainerProps = {
+  selectionsData: SelectionItem[];
+};
 
 export type DropBoxProps = Readonly<{
-    updateSelectionsOrder: (draggedItem: DragItem, hoverContainer: string) => void;
-    selection: SelectionItem | null;
-    container: string;
+  updateSelectionsOrder: (dragIndex: number, hoverIndex: number) => void;
+  selection: SelectionItem | null;
+  index: number;
 }>;

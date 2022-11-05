@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDrag } from "react-dnd";
 import clsx from "clsx";
 
@@ -8,11 +8,11 @@ import styles from "./DragBox.module.scss";
 
 export const DragBox: React.FC<DragBoxProps> = ({
   dragItem: { id, name, icon },
-  container,
+  index,
 }) => {
   const [{ isDragging }, drag] = useDrag({
     type: DragTypes.Card,
-    item: { type: DragTypes.Card, id, container, name, icon },
+    item: { type: DragTypes.Card, id, index, name, icon },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),

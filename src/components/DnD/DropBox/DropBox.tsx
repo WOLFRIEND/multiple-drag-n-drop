@@ -11,14 +11,14 @@ import styles from "./DropBox.module.scss";
 export const DropBox: React.FC<DropBoxProps> = ({
   updateSelectionsOrder,
   selection,
-  container,
+  index,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const [_, drop] = useDrop({
     accept: [DragTypes.Card],
     drop(item: DragItem) {
-      updateSelectionsOrder(item, container);
+      updateSelectionsOrder(item.index, index);
     },
     collect: (monitor) => {
       if (monitor.isOver()) {
@@ -36,7 +36,7 @@ export const DropBox: React.FC<DropBoxProps> = ({
       })}
       ref={drop}
     >
-      <DragBox dragItem={selection} container={selection.container || ""} />
+      <DragBox dragItem={selection} index={index} />
     </div>
   );
 };

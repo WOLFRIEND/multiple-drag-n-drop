@@ -1,74 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { DropBox } from "./DropBox";
-import {
-  ContainerNames,
-  Selections,
-  DropBoxcontainerProps,
-} from "./DropBox.types";
-import { DragItem } from "@components/DnD/DragBox/DragBox.types";
+import { DropBoxContainerProps, SelectionItem } from "./DropBox.types";
 import styles from "./DropBox.module.scss";
 import { Table } from "../../Table/Table";
 
-export const DropBoxContainer: React.FC<any> = ({ selectionsData }) => {
-  const [selections, setSelections] = useState<Selections | null>(
+export const DropBoxContainer: React.FC<DropBoxContainerProps> = ({
+  selectionsData,
+}) => {
+  const [selections, setSelections] = useState<SelectionItem[] | []>(
     selectionsData
   );
 
-  const updateSelectionsOrder = (
-    draggedItem: DragItem,
-    hoveredContainer: string
-  ) => {
-    const draggedItemContainer = draggedItem.container;
+  const updateSelectionsOrder = (dragIndex: number, hoverIndex: number) => {
+    const dragItem = selections[dragIndex];
+    const dropItem = selections[hoverIndex];
+    const newArray = [...selections];
 
-    const hoveredItem = selections[hoveredContainer as keyof Selections];
+    newArray.splice(dragIndex, 1, dropItem);
+    newArray.splice(hoverIndex, 1, dragItem);
 
-    draggedItem.container = hoveredContainer;
-
-    if (hoveredItem) {
-      hoveredItem.container = draggedItemContainer;
-    }
-
-    const newSelections = { ...selections };
-
-    newSelections[draggedItem.container as keyof Selections] = draggedItem;
-    if (hoveredItem) {
-      newSelections[hoveredItem.container as keyof Selections] = hoveredItem;
-    } else {
-      newSelections[draggedItemContainer as keyof Selections] = null;
-    }
-
-    setSelections(newSelections);
+    setSelections(newArray);
   };
 
   return (
     <div className={styles.container}>
-      <div className={styles.itemContainer}>
-        <DropBox
-          container={ContainerNames.Container1}
-          selection={selections[ContainerNames.Container1]}
-          updateSelectionsOrder={updateSelectionsOrder}
-        />
-        <Table />
-      </div>
-
-      <div className={styles.itemContainer}>
-        <DropBox
-          container={ContainerNames.Container2}
-          selection={selections[ContainerNames.Container2]}
-          updateSelectionsOrder={updateSelectionsOrder}
-        />
-        <Table />
-      </div>
-
-      <div className={styles.itemContainer}>
-        <DropBox
-          container={ContainerNames.Container3}
-          selection={selections[ContainerNames.Container3]}
-          updateSelectionsOrder={updateSelectionsOrder}
-        />
-        <Table />
-      </div>
+      {selections.map((item, index) => {
+        return (
+          <div className={styles.itemContainer}>
+            <DropBox
+              key={index}
+              index={index}
+              selection={selections[index]}
+              updateSelectionsOrder={updateSelectionsOrder}
+            />
+            <Table />
+          </div>
+        );
+      })}
     </div>
   );
 };
