@@ -10,10 +10,6 @@
   border: 8px solid rgba(#295175, 0.5);
   border-radius: 4px;
   cursor: pointer;
-
-  @include respond-to-up($desktopBreakpointWidth) {
-    flex-wrap: wrap;
-  }
 }
 
 .dropContainer {
