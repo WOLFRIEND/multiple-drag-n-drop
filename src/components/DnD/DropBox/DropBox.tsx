@@ -3,9 +3,8 @@ import { useDrop } from "react-dnd";
 import clsx from "clsx";
 
 import { DragBox } from "../DragBox/DragBox";
-import { DropBoxProps } from "./DropBox.types";
 
-import { DragItem, DragTypes } from "../DragBox/DragBox.types";
+import { DragItem, DragTypes, DropBoxProps } from "../DnD.types";
 import styles from "./DropBox.module.scss";
 
 export const DropBox: React.FC<DropBoxProps> = ({

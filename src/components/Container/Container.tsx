@@ -3,7 +3,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { DropBoxContainer } from "../DnD/DropBox/DropBoxContainer";
 import { Header } from "../Header/Header";
 import { Logo } from "../Logo/Logo";
-import { SelectionItem } from "@components/DnD/DropBox/DropBox.types";
+import { SelectionItem } from "@components/DnD/DnD.types";
 
 const MOCK_DATA: SelectionItem[] = [
   {

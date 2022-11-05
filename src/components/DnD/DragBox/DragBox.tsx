@@ -2,7 +2,7 @@ import React from "react";
 import { useDrag } from "react-dnd";
 import clsx from "clsx";
 
-import { DragBoxProps, DragTypes } from "./DragBox.types";
+import { DragBoxProps, DragTypes } from "../DnD.types";
 
 import styles from "./DragBox.module.scss";
 

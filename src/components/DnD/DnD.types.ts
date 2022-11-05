@@ -1,6 +1,3 @@
-import { DragItem } from "@components/DnD/DragBox/DragBox.types";
-import { DragBox } from "@components/DnD/DragBox/DragBox.types";
-
 export type SelectionItem = DragBox & {
   index?: number;
 };
@@ -14,3 +11,23 @@ export type DropBoxProps = Readonly<{
   selection: SelectionItem | null;
   index: number;
 }>;
+
+export type DragBox = {
+  id: string;
+  name: string;
+  icon: string;
+};
+
+export type DragBoxProps = {
+  dragItem: SelectionItem;
+  index: number;
+};
+
+export enum DragTypes {
+  Card = "card",
+}
+
+export type DragItem = DragBox & {
+  index: number;
+  type: string;
+};
