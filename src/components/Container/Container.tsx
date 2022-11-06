@@ -21,6 +21,21 @@ const MOCK_DATA: SelectionItem[] = [
     name: "Cat tails",
     icon: "cat-tails",
   },
+  {
+    id: "4",
+    name: "Delicate cat paws",
+    icon: "cat-paws",
+  },
+  {
+    id: "5",
+    name: "Wool pancakes",
+    icon: "wool-pancakes",
+  },
+  {
+    id: "6",
+    name: "Cat's minion",
+    icon: "cats-minion",
+  },
 ];
 
 export const Container = () => {
