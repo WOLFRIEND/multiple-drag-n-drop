@@ -22,7 +22,7 @@
             "@app/*": ["src/*"],
             "@static/*": ["src/static/*"]
         },
-        "plugins": [{ "name": "typescript-plugin-css-modules" }],
+        "plugins": [{ "name": "typescript-plugin-css-modules" }]
     },
     "exclude": ["dist", "out", "jest.setup.ts", "node_modules"],
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
