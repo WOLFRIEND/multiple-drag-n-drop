@@ -4,6 +4,10 @@ import { DropBoxContainer } from "../DnD/DropBox/DropBoxContainer";
 import { Header } from "../Header/Header";
 import { Logo } from "../Logo/Logo";
 import { SelectionItem } from "@components/DnD/DnD.types";
+import styles from "./Container.module.scss";
+import info from "../../assets/info.png";
+
+import React from "react";
 
 const MOCK_DATA: SelectionItem[] = [
   {
@@ -43,6 +47,10 @@ export const Container = () => {
     <div>
       <Header />
       <Logo />
+      <div className={styles.infoContainer}>
+        <img src={info} className={styles.icon} />
+        <p>Drag and drop dishes between tables to change their arrangement.</p>
+      </div>
       <DndProvider backend={HTML5Backend}>
         <DropBoxContainer selectionsData={MOCK_DATA} />
       </DndProvider>
