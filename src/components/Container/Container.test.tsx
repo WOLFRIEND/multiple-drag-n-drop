@@ -4,7 +4,13 @@ import React from "react";
 import { render, cleanup } from "@testing-library/react";
 
 import { Container } from "./Container";
-import { dropBoxAppearance } from "./Container.definitions";
+import {
+  dragAndDropBehavior,
+  dropBoxContainerAppearance,
+  dropBoxContainerDataAppearance,
+} from "./Container.definitions";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 const feature = loadFeature("./Container.feature", {
   loadRelativePath: true,
@@ -13,12 +19,18 @@ const feature = loadFeature("./Container.feature", {
 defineFeature(feature, (test) => {
   describe("Check drag and drop behavior", () => {
     beforeAll(() => {
-      render(<div>Kok</div>);
+      render(
+        <DndProvider backend={HTML5Backend}>
+          <Container />
+        </DndProvider>
+      );
     });
     afterAll(() => {
       cleanup();
       jest.resetAllMocks();
     });
-    dropBoxAppearance(test);
+    dropBoxContainerAppearance(test);
+    dropBoxContainerDataAppearance(test);
+    dragAndDropBehavior(test);
   });
 });

@@ -26,6 +26,7 @@ export const DragBox: React.FC<DragBoxProps> = ({
         [styles.dragging]: isDragging,
       })}
       ref={drag}
+      data-testid={name}
     >
       <img src={image} className={styles.icon} />
       <p className={styles.name}>{name}</p>

@@ -34,6 +34,7 @@ export const DropBox: React.FC<DropBoxProps> = ({
         [styles.hovered]: isHovered,
       })}
       ref={drop}
+      data-testid={`drop box ${index}`}
     >
       <DragBox dragItem={selection} index={index} />
     </div>

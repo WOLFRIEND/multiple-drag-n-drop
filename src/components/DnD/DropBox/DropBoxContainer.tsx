@@ -24,7 +24,7 @@ export const DropBoxContainer: React.FC<DropBoxContainerProps> = ({
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid={"drop box container"}>
       {selections.map((item, index) => {
         return (
           <div className={styles.itemContainer} key={index}>
