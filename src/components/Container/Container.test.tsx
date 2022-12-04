@@ -1,16 +1,17 @@
-import { loadFeature, defineFeature } from "jest-cucumber";
 import React from "react";
 
+import { loadFeature, defineFeature } from "jest-cucumber";
 import { render, cleanup } from "@testing-library/react";
 
 import { Container } from "./Container";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+
 import {
   dragAndDropBehavior,
   dropBoxContainerAppearance,
   dropBoxContainerDataAppearance,
 } from "./Container.definitions";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
 
 const feature = loadFeature("./Container.feature", {
   loadRelativePath: true,

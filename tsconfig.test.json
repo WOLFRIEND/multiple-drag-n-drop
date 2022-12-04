@@ -1,8 +1,0 @@
-{
-    "extends": "./tsconfig",
-    "compilerOptions": {
-        "jsx": "react",
-    },
-
-    "exclude": ["dist", ".next", "out", "next.config.js", "node_modules"]
-}

@@ -1,6 +1,6 @@
-Feature: Drag and Drop testing
+Feature: Drag and Drop
 
-  Rule: Check drag and drop
+  Rule: Check drag and drop behavior
 
     Scenario: DropBoxContainer appearance
       When I load the page
