@@ -33,7 +33,7 @@ export const dropBoxContainerDataAppearance = (test): void => {
 export const dragAndDropBehavior = (test): void => {
   test("Drag and drop behavior", async ({ when, then, and }) => {
     when(
-      /^I drag the '(.*)' dish and drop it on the third table with the '(.*)' dish$/,
+      /^I drag the '(.*)' dish from the first table and drop it on the third table with the '(.*)' dish$/,
       async (firstDragBoxTestId) => {
         await waitFor(() => {
           const firstDragBox = screen.getByTestId(firstDragBoxTestId);

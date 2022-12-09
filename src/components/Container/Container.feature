@@ -20,6 +20,6 @@ Feature: Drag and Drop
         | Cat's minion      |
 
     Scenario: Drag and drop behavior
-      When I drag the 'Stir-Fried Cat' dish and drop it on the third table with the 'Cat tails' dish
+      When I drag the 'Stir-Fried Cat' dish from the first table and drop it on the third table with the 'Cat tails' dish
       Then I should see that the first table contains 'Cat tails' dish
       And I should see that the third table contains 'Stir-Fried Cat' dish
